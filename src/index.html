@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="assets/styles/output.css" rel="stylesheet" />
+  <title>Aditya</title>
+</head>
+
+<body class="cover overflow-x-hidden">
+  <header class="flex justify-between items-center p-6 md:p-6 lg:px-10">
+    <div class="relative flex items-center gap-3 px-2 pt-2">
+      <a href="#"
+        class="rounded-full px-7 py-3 text-xs font-jost font-medium outline-1 outline-offset-2 outline-black bg-black text-white sm:px-8 sm:py-3 md:px-9 md:py-3.5 lg:px-10 lg:py-4 hover:underline hover:decoration-1">CV</a>
+      <div
+        class="inline-flex items-center rounded-full gap-4 outline-1 outline-offset-1 outline-black sm:px-0.5 sm:py-0.5 md:px-0.5 md:py-0.5 lg:px-0.5 lg:py-0.5 lg:outline-offset-[0.5px]">
+        <a href="mailto:adityagaudy31@gmail.com"
+          class="px-5 py-3 text-xs font-jost font-medium text-black sm:py-2.5 md:px-7 md:py-3 lg:hidden hover:underline">Email</a>
+        <button id="copyBtn" onclick="copyEmail()"
+          class="hidden rounded-full cursor-pointer px-10 py-4 text-xs font-jost font-medium bg-black text-white hover:underline lg:inline-block">
+          Copy
+        </button>
+        <span id="email"
+          class="hidden mr-4 font-jost text-xs tracking-wide font-medium text-black lg:inline-block">adityagaudy31@gmail.com</span>
+      </div>
+    </div>
+    <div id="menu" class="relative">
+      <ul class="hidden md:flex text-base font-jost items-center gap-0.5">
+        <li>
+          <a href="#home" class="px-3 py-2 text-black hover:text-slate duration-100">Home
+          </a>
+        </li>
+        <li>
+          <span class="text-xs">/</span>
+        </li>
+        <li>
+          <a href="#projects" class="px-3 py-2 text-black hover:text-slate duration-100">Projects</a>
+        </li>
+        <li>
+          <span class="text-xs">/</span>
+        </li>
+        <li>
+          <a href="#tech-stack" class="px-3 py-2 text-black hover:text-slate duration-100">Tech Stack</a>
+        </li>
+        <li>
+          <span class="text-xs">/</span>
+        </li>
+        <li>
+          <a href="#skills" class="px-3 py-2 text-black hover:text-slate duration-100">Skills</a>
+        </li>
+        <li>
+          <span class="text-xs">/</span>
+        </li>
+        <li>
+          <a href="#contact" class="px-3 py-2 text-black hover:text-slate duration-100">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <button id="menu-btn"
+      class="ml-auto p-0.5 rounded-md z-50 md:hidden hover:outline-black hover:outline-2 hover:outline-dashed"
+      aria-label="Toggle Menu">
+      <label class="hamburger">
+        <input id="menu-toggle" type="checkbox" class="hidden" />
+        <svg viewBox="0 0 32 32" class="w-8 h-8">
+          <path class="line line-top-bottom"
+            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+          </path>
+          <path class="line" d="M7 16 27 16"></path>
+        </svg>
+      </label>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden">
+      <nav id="mobile-menu"
+        class="hidden fixed top-0 left-0 items-center justify-center w-full h-full px-28 pt-20 py-10 font-jost gap-6 opacity-0 -translate-y-4 transition-all duration-300 z-40 bg-white">
+        <ul class="flex flex-col w-full mt-12 gap-7">
+          <li>
+            <a href="#home"
+              class="block w-full text-center px-6 py-3 text-lg tracking-widest font-medium rounded-md border border-black hover:bg-black hover:text-white transition duration-100">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#projects"
+              class="block w-full text-center px-6 py-3 text-lg tracking-widest font-medium rounded-md border border-black hover:bg-black hover:text-white transition duration-100">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#tech-stack"
+              class="block w-full text-center px-6 py-3 text-lg tracking-widest font-medium rounded-md border border-black hover:bg-black hover:text-white transition duration-100">
+              Tech Stack
+            </a>
+          </li>
+          <li>
+            <a href="#skills"
+              class="block w-full text-center px-6 py-3 text-lg tracking-widest font-medium rounded-md border border-black hover:bg-black hover:text-white transition duration-100">
+              Skills
+            </a>
+          </li>
+          <li>
+            <a href="#contact"
+              class="block w-full text-center px-6 py-3 text-lg tracking-widest font-medium rounded-md border border-black hover:bg-black hover:text-white transition duration-100">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative flex flex-col justify-center items-center text-center px-6 mt-24">
+    <!-- Home -->
+    <section id="home" class="relative">
+      <div class="flex justify-center items-center">
+        <div class="relative flex items-center justify-center w-fit">
+          <img src="assets/images/profile.jpg" alt="Me and myy sibling"
+            class="w-32 h-32 rounded-full object-cover border-4 shadow-md sm:w-[154px] sm:h-[154px] md:w-40 md:h-40 lg:w-44 lg:h-44 border-white" />
+          <div
+            class="absolute right-0 translate-x-16 top-1/2 -translate-y-1/2 -rotate-12 shadow px-7 py-3 font-jost font-medium rounded-full text-sm animate-bounce bg-white text-black sm: lg:px-9 lg:py-4">
+            Hi!<span class="inline-block pl-1">👋🏼</span>
+          </div>
+        </div>
+      </div>
+      <h1
+        class="mt-6 text-3xl font-jost font-bold leading-tight max-w-md sm:max-w-lg sm:text-4xl md:max-w-xl md:text-[44px] lg:text-5xl lg:max-w-2xl">
+        Saya Aditya, Seorang Junior Web Developer
+      </h1>
+      <div class="flex justify-center py-8">
+        <a href="https://github.com/Gaudy165"
+          class="w-fit relative flex justify-center items-center cursor-pointer shadow-xl font-jost text-lg px-4 py-3 gap-3 border-slate rounded-full group bg-white text-black font-semibold">
+          Lihat Repo
+          <svg
+            class="w-8 h-8 justify-end group-hover:rotate-90 ease-linear duration-300 rounded-full border group-hover:border-none p-2 rotate-45 text-white border-black group-hover:bg-black"
+            viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+              class="fill-black group-hover:fill-white"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="relative mt-20 w-full px-4 mx-auto">
+      <div class="flex justify-center my-14 relative">
+        <div class="absolute top-1/2 w-3xl h-px bg-black"></div>
+        <span
+          class="relative px-8 py-3 rounded-full shadow-md transform -rotate-12 text-sm font-jost font-medium border border-black bg-white">
+          Projects
+        </span>
+      </div>
+      <div class="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-2">
+        <div class="flex flex-col rounded-3xl shadow-lg bg-white text-gray-700">
+          <div class="w-full aspect-[17/11] overflow-hidden rounded-t-3xl">
+            <a href="https://www.figma.com/proto/xmSVo9CRsBga5ShRPz9TlW/Luxe-V-Mobile-Design?node-id=0-1&t=xjIfCTMXRh6BK8PL-1"
+            >
+              <img src="assets/images/projects/car_ui.png" alt="Desain UI mobil"
+                class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            </a>
+          </div>
+          <div class="flex flex-col justify-between flex-grow p-6 md:p-4">
+            <div>
+              <h5 class="py-2 text-2xl font-jost font-semibold text-black md:text-xl lg:text-2xl">
+                Luxe-V Mobile App Design
+              </h5>
+              <p
+                class="text-base font-jost font-normal text-slate mb-4 px-4 py-1 sm:text-lg md:text-base md:py-1.5 lg:px-10 lg:text-lg">
+                Mendesain halaman aplikasi mobile untuk pemesanan mobil klasik dan mewah. Desain ini dibuat dengan
+                Figma.
+              </p>
+            </div>
+            <div class="py-2">
+              <a href="https://www.figma.com/proto/xmSVo9CRsBga5ShRPz9TlW/Luxe-V-Mobile-Design?node-id=0-1&t=n7ehiat2PQi33hbo-1"
+              >
+                <button type="button"
+                  class="rounded-[10px] mb-3 px-6 py-3 text-sm font-jost font-semibold capitalize tracking-wider cursor-pointer outline-black bg-black text-white sm:text-base md:px-5 md:py-3 md:text-sm lg:text-base hover:outline-2 hover:outline-offset-4 hover:outline-dashed">
+                  Lihat Proyek
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col rounded-3xl shadow-lg bg-white text-gray-700">
+          <div class="w-full aspect-[17/11] overflow-hidden rounded-t-3xl">
+            <a href="https://www.figma.com/proto/your-link-here">
+              <img src="assets/images/projects/edu-web.jpg" alt="Website bimbingan belajar"
+                class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            </a>
+          </div>
+          <div class="flex flex-col justify-between flex-grow p-6 md:p-4">
+            <div>
+              <h5 class="py-2 text-2xl font-jost font-semibold text-black md:text-xl lg:text-2xl">
+                Rimberio Bimbel Website
+              </h5>
+              <p
+                class="text-base font-jost font-normal text-slate mb-4 px-4 py-1 sm:text-lg md:text-base md:py-1.5 lg:px-10 lg:text-lg">
+                Membuat website statis untuk platform bimbingan belajar online menggunakan HTML dan CSS.
+              </p>
+            </div>
+
+            <div class="py-2">
+              <a href="https://www.figma.com/proto/your-link-here">
+                <button type="button"
+                  class="rounded-[10px] mb-3 px-6 py-3 text-sm font-jost font-semibold capitalize tracking-wider cursor-pointer outline-black bg-black text-white sm:text-base md:px-5 md:py-3 md:text-sm lg:text-base hover:outline-2 hover:outline-offset-4 hover:outline-dashed">
+                  Lihat Proyek
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col rounded-3xl shadow-lg bg-white text-gray-700">
+          <div class="w-full aspect-[17/11] overflow-hidden rounded-t-3xl">
+            <a href="https://www.figma.com/proto/your-link-here">
+              <img src="assets/images/projects/travel-app.jpg" alt="Website travel dan tempat wisata"
+                class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            </a>
+          </div>
+          <div class="flex flex-col justify-between flex-grow p-6 md:p-4">
+            <div>
+              <h5 class="py-2 text-2xl font-jost font-semibold text-black md:text-xl lg:text-2xl">
+                Mari Travel Website
+              </h5>
+              <p
+                class="text-base font-jost font-normal text-slate mb-4 px-4 py-1 sm:text-lg md:text-base md:py-1.5 lg:px-10 lg:text-lg">
+                Website travel untuk layanan pemesanan tiket, penginapan, dan destinasi wisata menarik dari seluruh dunia.
+              </p>
+            </div>
+
+            <div class="py-2">
+              <a href="https://www.figma.com/proto/your-link-here">
+                <button type="button"
+                  class="rounded-[10px] mb-3 px-6 py-3 text-sm font-jost font-semibold capitalize tracking-wider cursor-pointer outline-black bg-black text-white sm:text-base md:px-5 md:py-3 md:text-sm lg:text-base hover:outline-2 hover:outline-offset-4 hover:outline-dashed">
+                  Lihat Proyek
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col rounded-3xl shadow-lg bg-white text-gray-700">
+          <div class="w-full aspect-[17/11] overflow-hidden rounded-t-3xl">
+            <a href="https://www.figma.com/proto/GMU2U7iQCq7T9Pj7jaQMi0/Profil?page-id=0%3A1&node-id=1-2&p=f&viewport=527%2C275%2C0.23&t=VhiDac9h0cgpXnyz-1&scaling=scale-down&content-scaling=fixed">
+              <img src="assets/images/projects/landing-page.jpeg" alt="Website travel dan tempat wisata"
+                class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            </a>
+          </div>
+          <div class="flex flex-col justify-between flex-grow p-6 md:p-4">
+            <div>
+              <h5 class="py-2 text-2xl font-jost font-semibold text-black md:text-xl lg:text-2xl">
+                UI Landing Page
+              </h5>
+              <p
+                class="text-base font-jost font-normal text-slate mb-4 px-4 py-1 sm:text-lg md:text-base md:py-1.5 lg:px-10 lg:text-lg">
+                Sebuah desain landing page portfolio dengan elemen tiga dimensi dan dibuat dengan Figma.
+              </p>
+            </div>
+
+            <div class="py-2">
+              <a href="https://www.figma.com/proto/GMU2U7iQCq7T9Pj7jaQMi0/Profil?page-id=0%3A1&node-id=1-2&p=f&viewport=527%2C275%2C0.23&t=VhiDac9h0cgpXnyz-1&scaling=scale-down&content-scaling=fixed">
+                <button type="button"
+                  class="rounded-[10px] mb-3 px-6 py-3 text-sm font-jost font-semibold capitalize tracking-wider cursor-pointer outline-black bg-black text-white sm:text-base md:px-5 md:py-3 md:text-sm lg:text-base hover:outline-2 hover:outline-offset-4 hover:outline-dashed">
+                  Lihat Proyek
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech-stack" class="mt-32 py-4">
+      <div class="relative flex justify-center">
+        <div class="absolute top-1/2 w-3xl h-px bg-black"></div>
+        <span
+          class="relative px-8 py-3 rounded-full shadow-md transform -rotate-12 text-sm font-jost font-medium border border-black bg-white">
+          Tech Stack
+        </span>
+      </div>
+      <div class="overflow-hidden flex w-max mt-14 gap-32 py-8 shadow-md bg-white border border-gray">
+        <ul class="flex gap-32 animate-marquee">
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/html5-logo.svg" alt="HTML 5" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/css3-logo.svg" alt="CSS 3" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/javascript-logo.svg" alt="Javascript" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/bootstrap-logo.svg" alt="Bootstrap" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/tailwind-logo.svg" alt="Tailwind" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/figma-logo.svg" alt="Figma" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/vue-logo.svg" alt="Vue JS" class="h-16" />
+          </li>
+        </ul>
+        <!-- duplikasi untuk looping -->
+        <ul class="animate-marquee flex gap-32" aria-hidden="true">
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/html5-logo.svg" alt="HTML 5" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/css3-logo.svg" alt="CSS 3" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/javascript-logo.svg" alt="Javascript" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/bootstrap-logo.svg" alt="Bootstrap" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/tailwind-logo.svg" alt="Tailwind" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/figma-logo.svg" alt="Figma" class="h-16" />
+          </li>
+          <li class="group relative flex flex-col items-center">
+            <img src="assets/images/techs/vue-logo.svg" alt="Vue JS" class="h-16" />
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="mt-12 py-20 px-6 sm:px-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-jost font-bold leading-10 sm:leading-12">
+          "Tumbuh dan berkembang bersama untuk menciptakan hasil yang berdampak"
+        </h2>
+      </div>
+      <div class="relative flex justify-center py-16">
+        <div class="absolute top-1/2 w-3xl h-px bg-black"></div>
+        <span
+          class="relative px-8 py-3 rounded-full shadow-md transform -rotate-12 text-sm font-jost font-medium border border-black bg-white">
+          Skills
+        </span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+        <div class="flex flex-col items-center text-center space-y-3 px-12 mb-6 sm:px-2 md:px-8 lg:px-2">
+          <img src="assets/images/skills/web-mobile-app.png" alt="Web and Mobile App" class="w-12 h-12" />
+          <h3 class="text-lg font-jost font-semibold">Web & Mobile App</h3>
+          <p class="text-sm font-jost text-slate">
+            Menciptakan situs web dan aplikasi seluler yang ramah dan mudah
+            digunakan bagi pengguna.
+          </p>
+        </div>
+        <div class="flex flex-col items-center text-center space-y-3 px-12 mb-6 sm:px-2 md:px-8 lg:px-2">
+          <img src="assets/images/skills/collaboration.png" alt="Collaboration" class="w-12 h-12" />
+          <h3 class="text-lg font-jost font-semibold">Collaboration</h3>
+          <p class="text-sm font-jost text-slate">
+            Membangun kerja sama tim yang baik untuk menciptakan solusi
+            inovatif.
+          </p>
+        </div>
+        <div class="flex flex-col items-center text-center space-y-3 px-12 mb-6 sm:px-2 md:px-8 lg:px-2">
+          <img src="assets/images/skills/ui-ux.png" alt="UI/UX Design" class="w-12 h-12" />
+          <h3 class="text-lg font-jost font-semibold">UI & UX Design</h3>
+          <p class="text-sm font-jost text-slate">
+            Mendesain antarmuka situs web dan aplikasi seluler yang intuitif
+            bagi pengalaman pengguna.
+          </p>
+        </div>
+        <div class="flex flex-col items-center text-center space-y-3 px-12 mb-6 sm:px-2 md:px-8 lg:px-2">
+          <img src="assets/images/skills/problem-solving.png" alt="Problem Solving" class="w-12 h-12" />
+          <h3 class="text-lg font-jost font-semibold">Problem Solving</h3>
+          <p class="text-sm font-jost text-slate">
+            Memecahkan masalah menjadi solusi cerdas, efisien, dan efektif.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="mt-16 mb-8 border-t border-black">
+    <div class="w-full max-w-7xl md:pt-0 px-4 sm:px-6 lg:px-8 mx-auto">
+      <div class="mt-8 grid grid-rows-3 items-center gap-5 text-center lg:flex lg:justify-between">
+        <div class="flex items-center justify-center gap-2 lg:justify-start">
+          <img class="w-10" src="assets/images/logo.png" alt="Logo">
+          <span class="font-jost font-semibold text-xl text-black">Aditya</span>
+        </div>
+        <ul class="font-jost text-center lg:ml-18">
+          <li
+            class="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-black dark:before:text-black text-xs">
+            <a class="inline-flex p-1 gap-x-2 text-sm font-normal text-black hover:text-slate duration-100 md:p-3 lg:p-2"
+              href="#home">
+              Home
+            </a>
+          </li>
+          <li
+            class="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-black dark:before:text-black text-xs">
+            <a class="inline-flex p-1 gap-x-2 text-sm font-normal text-black hover:text-slate duration-100 md:p-3 lg:p-2"
+              href="#projects">
+              Projects
+            </a>
+          </li>
+          <li
+            class="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-black dark:before:text-black text-xs">
+            <a class="inline-flex p-1 gap-x-2 text-sm font-normal text-black hover:text-slate duration-100 md:p-3 lg:p-2"
+              href="#tech-stack">
+              Tech Stack
+            </a>
+          </li>
+          <li
+            class="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-black dark:before:text-black text-xs">
+            <a class="inline-flex p-1 gap-x-2 text-sm font-normal text-black hover:text-slate duration-100 md:p-3 lg:p-2"
+              href="#skills">
+              Skills
+            </a>
+          </li>
+          <li
+            class="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-black dark:before:text-black text-xs">
+            <a class="inline-flex p-1 gap-x-2 text-sm font-normal text-black hover:text-slate duration-100 md:p-3 lg:p-2"
+              href="#contact">
+              Contact
+            </a>
+          </li>
+        </ul>
+        <div class="md:text-center">
+          <a class="inline-flex justify-center items-center p-3 text-sm font-semibold rounded-full border border-transparent text-black hover:text-slate transition-colors duration-100"
+            href="https://www.instagram.com/aditya.gaudy/">
+            <svg class="shrink-0 size-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Instagram</title>
+              <path
+                d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
+                fill="currentColor" />
+            </svg>
+          </a>
+          <a class="inline-flex justify-center items-center p-3 text-sm font-semibold rounded-full border border-transparent text-black hover:text-slate transition-colors duration-100"
+            href="https://github.com/Gaudy165">
+            <svg class="shrink-0 size-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>GitHub</title>
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605 -2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22 -.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23 .96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23 .645 1.653.24 2.873.12 3.176 .765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92 .42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57 C20.565 22.092 24 17.592 24 12.297 c0-6.627-5.373-12-12-12"
+                fill="currentColor" />
+            </svg>
+          </a>
+          <a class="inline-flex justify-center items-center p-3 text-sm font-semibold rounded-full border border-transparent text-black hover:text-slate transition-colors duration-100"
+            href="mailto:adityagaudy31@gmail.com">
+            <svg class="shrink-0 size-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Gmail</title>
+              <path
+                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                fill="currentColor" />
+            </svg>
+          </a>
+          <a class="inline-flex justify-center items-center p-3 text-sm font-semibold rounded-full border border-transparent text-black hover:text-slate transition-colors duration-100"
+            href="https://t.me/adityagaudy">
+            <svg class="shrink-0 size-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Telegram</title>
+              <path
+                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+                fill="currentColor" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/scripts/script.js"></script>
+</body>
+
+</html>
