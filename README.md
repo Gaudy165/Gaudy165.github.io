@@ -25,14 +25,6 @@ Saya memulai perjalanan sebagai web developer dengan semangat untuk terus belaja
 
 ---
 
-## 📁 CV & Kontak
-
-- 📧 Email: [adityagaudy31@gmail.com](mailto:adityagaudy31@gmail.com)
-- 📄 [Download CV](#)
-- 📦 [Lihat Repo](#)
-
----
-
 ## 💡 "Konsistensi adalah kunci untuk terus berkembang."
 
 Terima kasih telah mengunjungi portofolio saya! Jangan ragu untuk mengeksplorasi dan menghubungi saya jika ada yang ingin didiskusikan 😊
